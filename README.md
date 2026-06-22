@@ -1,47 +1,75 @@
-SSH Brute Force Login Script
-Description
-This Python script demonstrates a brute force attack on an SSH service using the paramiko library. It attempts to login to a specified SSH server using a list of passwords and prints whether the login was successful or not. This script is intended for educational purposes only. Unauthorized access to systems is illegal and unethical. Always ensure you have permission to test any system.
+# SSH Brute Force Login Script
 
-Requirements
-Python 3.x
+A high-performance Python script designed to test the strength of SSH credentials by simulating dictionary-based brute force attacks. Utilizing the `paramiko` library, this tool automates authentication requests against an SSH server using a user-provided wordlist.
 
-paramiko library
+---
 
-Installation
+## Technical Features
 
-Clone the repository
-git clone https://github.com/HackingHusky/ssh-bruteforce-login.py
-cd ssh-bruteforce-login
+*   Automated Authentication: Automates credential stuffing and brute force evaluation against the standard SSH protocol.
+*   Robust Transport Layer: Built on top of the Paramiko library for secure and accurate cryptographic negotiation.
+*   Clear Auditing Logs: Provides immediate terminal feedback identifying valid authentication pairs versus rejected attempts.
 
-Install the rewuire4d libarary:
-pip install paramiko
+---
 
-Usage
-Create a file containing a list of passwords (one per line).
+## Prerequisites
 
-Run the script:
+Before running the tool, ensure your system meets the following software requirements:
 
+*   Python 3.x
+*   Pip (Python Package Installer)
 
-python ssh_brute_force.py <hostname> <username> <password_file>
+---
 
-<hostname>: The IP address or domain name of the SSH server.
+## Installation
 
-<username>: The username to attempt to log in with.
+Follow these operational steps to provision the codebase and configure dependencies on your local machine:
 
-<password_file>: The path to the file containing the list of passwords.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com
+   cd ssh-bruteforce-login.py
+   ```
 
-Example:
+2. Install the required runtime libraries:
+   ```bash
+   pip install paramiko
+   ```
 
+---
 
+## Usage
+
+The script evaluates a single targeted service at a time and requires a formatted password dictionary file containing one entry per line.
+
+### Syntax
+
+```bash
+python ssh_brute_force.py <target_ip> <username> <password_file>
+```
+
+### Argument Layout
+
+*   `<target_ip>`: The IP address or fully qualified domain name (FQDN) of the destination SSH server.
+*   `<username>`: The explicit system user profile identity you are validating (e.g., root, admin, ubuntu).
+*   `<password_file>`: The absolute or relative local path pointing to your payload text file containing test passwords.
+
+### Execution Example
+
+```bash
 python ssh_brute_force.py 192.168.1.1 root passwords.txt
+```
 
-Notes
-Ensure you have permission to test the target SSH service.
+---
 
-This script is for educational purposes only. Unauthorized access to systems is illegal and unethical.
+## Disclaimer and Legal Notice
 
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+This application is strictly engineered for educational purposes, legitimate security audits, defensive validation routines, and authorized Capture The Flag (CTF) deployment. Conducting credential stuffing or brute force assessments against network resources without prior explicit, written authorization from the infrastructure owner is strictly illegal. 
 
-Acknowledgements
-paramiko library documentation for providing SSH connectivity.
+The author assumes zero liability or accountability for secondary damages, misuse, or illegal activities carried out using this software framework.
+
+---
+
+## License
+
+This software utility is distributed openly under the provisions of the permissive MIT License. Review the repository LICENSE asset file for exhaustive documentation regarding redistribution or code modification clauses.
