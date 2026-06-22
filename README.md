@@ -1,4 +1,6 @@
 # SSH Brute Force Login Script
+<img width="1376" height="768" alt="image" src="https://github.com/user-attachments/assets/f1e0b1a6-fd8d-425e-a1fa-3055475edfb3" />
+
 
 A high-performance Python script designed to test the strength of SSH credentials by simulating dictionary-based brute force attacks. Utilizing the `paramiko` library, this tool automates authentication requests against an SSH server using a user-provided wordlist.
 
